@@ -92,8 +92,9 @@ public class Storage {
 	public void addSubscriber(String user, String topic) {
 
 		
-		subscriptions.get(topic).add(user);
-		
+		Set<String> set = getSubscribers(topic);
+		set.add(user);
+		subscriptions.put(user, set);
 	}
 
 		

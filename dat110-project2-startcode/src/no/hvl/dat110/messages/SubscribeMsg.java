@@ -22,6 +22,11 @@ public class SubscribeMsg extends Message {
 	public String toString() {
 		return "SubscribeMsg [msg=" + topic + "]";
 	}
+
+	public String getTopic() {
+		// TODO Auto-generated method stub
+		return topic;
+	}
 	
 	
 

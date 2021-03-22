@@ -9,7 +9,7 @@ public class PublishMsg extends Message {
 	String topic;
 	String msg;
 	
-	public PublishMsg(String topic, String user, String msg) {
+	public PublishMsg(String user, String topic, String msg) {
 		super(MessageType.PUBLISH,user);
 		this.topic = topic;
 		this.msg = msg;
@@ -37,13 +37,9 @@ public class PublishMsg extends Message {
 
 	@Override
 	public String toString() {
-		return "PublishMsg [msg=" + msg + ", topic=" + topic + "]";
+return "PublishMsg{" + "topic='" + topic + "message=" + msg + ", user='" + getUser() + '}';
 	}
 
-
-	public String getMsg() {
-		return msg;
-	}
 
 
 	public void setMsg(String msg) {
@@ -53,6 +49,7 @@ public class PublishMsg extends Message {
 
 	public String getMessage() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return msg;	
+		
 	}
 }

@@ -5,7 +5,7 @@ public class DeleteTopicMsg extends Message {
 	
 	String topic;
 	// message sent from client to create topic on the broker
-public DeleteTopicMsg(String topic, String user) {
+public DeleteTopicMsg(String user, String topic) {
 	super(MessageType.DELETETOPIC,user);
 	this.topic = topic;
 	

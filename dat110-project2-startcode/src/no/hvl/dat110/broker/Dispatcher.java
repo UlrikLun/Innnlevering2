@@ -133,7 +133,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onSubscribe:" + msg.toString());
 		
-		storage.addSubscriber(msg.getUser(), msg.getMsg());
+		storage.addSubscriber(msg.getTopic(), msg.getUser());
 
 		// TODO: subscribe user to the topic
 		// user and topic is contained in the subscribe message
@@ -157,7 +157,7 @@ public class Dispatcher extends Stopable {
 		Logger.log("onPublish:" + msg.toString());
 		
 		
-		HashSet<String> subscribers = (HashSet<String>) storage.getSubscribers(msg.getTopic());
+		Set<String> subscribers = storage.getSubscribers(msg.getTopic());
 		for(String subscriber : subscribers) {
 			storage.getSession(subscriber).send(msg);
 		}
